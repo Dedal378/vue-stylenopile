@@ -2,7 +2,7 @@ name: deploy-gh-pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, gh-pages ]
   pull_request:
     branches: [ master ]
 
@@ -12,17 +12,27 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-
+    
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: '14'
       
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      - name: Clean install dependencies
       - run: npm ci
-      - run: npm test
+
+      - name: Build a files
       - run: npm run build
 
-      - name: deploy
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
