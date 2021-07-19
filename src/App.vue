@@ -1,7 +1,7 @@
 <template>
-  <div class="">
-    <div class="loader2"></div>
-    <div class="loader"></div>
+  <div class="wrapper">
+    <div class="loader lighter"></div>
+    <div class="loader darker"></div>
     <div class="container" id="app">
       <Header />
       <Main />
@@ -35,23 +35,23 @@ export default {
   position: absolute;
   width: 100vw;
   height: 110vh;
-  background-color: #686868;
-  transform: translateY(100vh);
-  animation: loader-up-down 5s cubic-bezier(.39, .39, .32, 1.19);
   opacity: 1;
-  z-index: 100;
+
+  &.darker {
+    background-color: #686868;
+    transform: translateY(100vh);
+    animation: loader-up-down 5s cubic-bezier(.39, .39, .32, 1.19);
+    z-index: 100;
+  }
+
+  &.lighter {
+    background-color: #bdbdbd;
+    animation: loader-down 5s cubic-bezier(.39, .39, .32, 1.19);
+    animation-fill-mode: forwards;
+    z-index: 99;
+  }
 }
 
-.loader2 {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: #bdbdbd;
-  animation: loader-down 5s cubic-bezier(.39, .39, .32, 1.19);
-  animation-fill-mode: forwards;
-  opacity: 1;
-  z-index: 99;
-}
 
 @keyframes loader-up-down {
   from {
