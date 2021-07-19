@@ -60,7 +60,7 @@
             viewBox="0 0 398.5 114.5"
             xmlns="http://www.w3.org/2000/svg"
         >
-          <defs>
+          <!--<defs>
             <linearGradient id="grad">
               <stop offset="0%" stop-color="#00C0FF" stop-opacity="1" />
               <stop offset="49%" stop-color="#FFCF00" />
@@ -109,7 +109,7 @@
                 <rect class="letter-color" height="110.7" width="2.3" x="307.8" y="2.1" />
               </g>
             </mask>
-          </defs>
+          </defs>-->
 
           <g mask="url(#mask)">
             <g>
@@ -151,7 +151,7 @@
             </g>
             <rect class="letter-color" height="110.7" width="2.3" x="307.8" y="2.1" />
           </g>
-          <animate attributeName="fill" begin="svg-logo.mouseover" dur="5s" values="0;1" fill="freeze" repeatCount="1" />
+          <!--<animate attributeName="rect" begin="svg-logo.mouseover" dur="5s" values="0;1" fill="freeze" repeatCount="1" />-->
         </svg>
       </div>
     </div>
@@ -205,7 +205,7 @@ export default {
         fill: #fff;
         stroke: #a5a5a5;
         transform: scale(1.05);
-        animation: rainbow 1s ease infinite;
+        //animation: rainbow 1s ease infinite;
         //animation: slidebg 5s linear infinite;
 
         .stroke {

@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper">
+  <div id="app" class="wrapper">
     <div class="loader lighter"></div>
     <div class="loader darker"></div>
-    <div class="container" id="app">
+    <div class="container">
       <Header />
       <Main />
     </div>
@@ -25,9 +25,9 @@ export default {
 .container {
   position: relative;
   display: grid;
-  grid-template-columns: 60px repeat(auto-fill, minmax(60px, 100vw));
+  grid-template-columns: 60px repeat(auto-fill, minmax(calc(100vw - 120px), 1000vw));
   gap: 20px;
-  height: 100vh;
+  max-height: 100vh;
   overflow-y: hidden;
 }
 
