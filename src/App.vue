@@ -39,15 +39,15 @@ export default {
 
   &.darker {
     background-color: #686868;
-    transform: translateY(100vh);
+    transform: translateY(-110vh);
     animation: loader-up-down 5s cubic-bezier(.39, .39, .32, 1.19);
     z-index: 100;
   }
 
   &.lighter {
     background-color: #bdbdbd;
+    transform: translateY(-110vh);
     animation: loader-down 5s cubic-bezier(.39, .39, .32, 1.19);
-    animation-fill-mode: forwards;
     z-index: 99;
   }
 }
@@ -55,13 +55,13 @@ export default {
 
 @keyframes loader-up-down {
   from {
-    transform: translateY(100vh);
+    transform: translateY(-110vh);
   }
   50% {
-    transform: translateY(0);
+    transform: translateY(-10vh);
   }
   to {
-    transform: translateY(100vh);
+    transform: translateY(-110vh);
   }
 }
 
@@ -70,10 +70,10 @@ export default {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(0);
+    transform: translateY(-10vh);
   }
   to {
-    transform: translateY(100vh);
+    transform: translateY(-110vh);
   }
 }
 </style>
